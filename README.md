@@ -1,1 +1,1 @@
-# Overview how communication between components can happen
+# Overview how communication between Razor components can happen
