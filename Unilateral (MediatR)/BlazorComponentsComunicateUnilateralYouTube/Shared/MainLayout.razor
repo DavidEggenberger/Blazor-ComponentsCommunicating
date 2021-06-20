@@ -1,0 +1,29 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar" style="        background: linear-gradient(180deg, @color, #3a0647);">
+        <NavMenu />
+    </div>
+
+    <div class="main">
+        <div class="top-row px-4">
+            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+        </div>
+
+        <div class="content px-4">
+            @Body
+        </div>
+    </div>
+</div>
+
+@code{
+    string color;
+    protected override void OnInitialized()
+    {
+        ColorChanged += (obj, args) =>
+        {
+            color = args.Color;
+            StateHasChanged();
+        };
+    }
+}
